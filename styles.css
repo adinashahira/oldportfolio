@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Karla', sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /** Layout **/
+  #container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 60px 100vh auto 80vh;
+    grid-template-areas:
+      "n n n n n n n n n n n n"
+      "h h h h h h h h h h h h"
+      "p p p p p p p p p p p p"
+      "f f f f f f f f f f f f";
+    position: relative;
+  }
+  
+  #welcome-section {
+    background-color: #CDB4DB;
+    grid-area: h;
+  }
+  
+  #navbar {
+    background-color: #FFC8DD;
+    grid-area: n;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    z-index: 1;
+  }
+  
+  #projects {
+    grid-area: p;
+    padding: 20px;
+  }
+  
+  #profile {
+    background-color: #FFAFCC;
+    grid-area: f;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /** END of layout **/
+  
+  /** Elements **/
+  /** Navbar **/
+  #nav-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+    align-items: center;
+  }
+  
+  #logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  #nav-menu {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+  }
+  
+  #nav-menu > li {
+    list-style: none;
+    padding: 4px;
+  }
+  
+  #nav-menu a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 2px;
+    font-size: 1.5rem;
+  }
+  
+  #nav-menu > li:hover {
+    background: #A2D2FF;
+  }
+  
+  /** Welcome Section **/
+  #welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #welcome-section > h1 {
+    font-family: Fairplay Display, serif;
+    color: #fff;
+    text-shadow: 1px 1px #FFC8DD;
+    font-size: 12vw;
+  }
+  
+  #welcome-section > h4 {
+    font-style: italic;
+    color:#fff;
+    font-size: 2vw;
+  }
+  
+  /** Projects **/
+  .projects-header {
+    color: #FFAFCC;
+    font-size: 8vw;
+    text-align: center;
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  
+  .project-tile {
+    filter: drop-shadow(2px 4px 8px #585858);
+    overflow: hidden;
+  }
+  
+  .project-img {
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: black;
+  }
+  
+  .project-tile:hover .overlay {
+    opacity: 0.7;
+  }
+  
+  .project-title {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .project-grid img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /** Profile **/
+  #profile > h2 {
+    color: #fff;
+    text-shadow: 1px 1px #CDB4DB;
+    font-size: 6vw;
+    text-align: center;
+  }
+  
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  
+  .contact-details {
+    color: #fff;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 1px #585858;
+    padding-right: 20px;
+  }
+  
+  /** END of Elements **/
+  
+  /** Media Query **/
+  @media (max-width: 500px)
+  {
+    #navbar {
+      position: absolute;
+      height: auto;
+    }
+    
+    #nav-container, #nav-menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+    
+    #logo {
+      margin-bottom: 5px;
+    }
+    
+    #welcome-section > h1 {
+    color:#fff;
+    font-size: 60px;
+  }
+    
+    #welcome-section > h4 {
+    font-style: italic;
+    color:#fff;
+    font-size: 20px;
+    }
+    
+    .projects-header {
+    color: #FFAFCC;
+    font-size: 48px;
+    text-align: center;
+    }
+    
+    #profile > h2 {
+    color: #fff;
+    text-shadow: 1px 1px #CDB4DB;
+    font-size: 36px;
+    text-align: center;
+    }
+  }
+  
+  /** END of Media Query **/
